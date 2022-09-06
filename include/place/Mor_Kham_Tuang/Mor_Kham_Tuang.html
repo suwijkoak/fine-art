@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>หม้อดำตวง</title>
+    <meta name="description" content="หม้อดำตวง">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/super-hands@2.1.0/dist/super-hands.min.js"></script>
+    <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+
+    <script>
+      AFRAME.registerComponent('hotspots',{
+        init:function(){
+            this.el.addEventListener('reloadspots',function(evt){
+            
+            //get the entire current spot group and scale it to 0
+            var currspotgroup=document.getElementById(evt.detail.currspots);
+            currspotgroup.setAttribute("scale","0 0 0");
+            
+            //get the entire new spot group and scale it to 1
+            var newspotgroup=document.getElementById(evt.detail.newspots);
+            newspotgroup.setAttribute("scale","1 1 1");
+          });
+        }
+      });
+      AFRAME.registerComponent('spot',{
+        schema:{
+          linkto:{type:"string",default:""},
+          spotgroup:{type:"string",default:""}
+        },
+        init:function(){
+          
+          //add image source of hotspot icon
+          this.el.setAttribute("src","#hotspot");
+          //make the icon look at the camera all the time
+          this.el.setAttribute("look-at","#cam");
+          
+          var data=this.data;
+          
+          this.el.addEventListener('click',function(){
+            //set the skybox source to the new image as per the spot
+            var sky=document.getElementById("skybox");
+            sky.setAttribute("src",data.linkto);
+            
+            var spotcomp=document.getElementById("spots");
+            var currspots=this.parentElement.getAttribute("id");
+            //create event for spots component to change the spots data
+            spotcomp.emit('reloadspots',{newspots:data.spotgroup,currspots:currspots});
+          });
+        }
+      });
+    </script>
+
+<script>
+  AFRAME.registerComponent('play-pause', {
+    init: function(){
+      var myVideo = document.querySelector('#surfer');
+      var videoControls = document.querySelector('#videoControls');
+      this.el.addEventListener('click',function(){
+        if(myVideo.paused){
+          myVideo.play();
+          videoControls.setAttribute('visible', '#pause');
+        }else{
+          myVideo.pause();
+          videoControls.setAttribute('visible', '#play');
+        }
+      });
+    }
+  });
+</script>
+
+<script>  
+AFRAME.registerComponent("anim-controller", {
+  
+  init: function(){
+      var anima = document.querySelector('#Animatutorial');
+      setTimeout(() => {this.el.setAttribute('visible', '#true')}, 4000)
+      this.el.addEventListener('click',function(){
+        if(myVideo.paused){
+          myVideo.play();
+          videoControls.setAttribute('visible', '#pause');
+        }
+      
+      }); 
+    }
+  });
+</script>
+
+
+  </head>
+  <body>
+    <a-scene background="color: #ECECEC" cursor="rayOrigin:mouse">
+      <a-assets>
+       <img id="point1" src="assets/V2420248.jpg"/> 
+       <img id="point2" src="assets/V2430249.jpg"/>
+       <img id="point3" src="assets/V2440250.jpg"/>
+       <img id="point4" src="assets/V2460252.jpg"/>
+       <img id="point5" src="assets/V2470253.jpg"/>
+
+
+
+
+
+        <img id="play" src="assets/play_icon.png">
+        <img id="pause" src="assets/pause_icon.png">
+
+          
+        <img id="hotspot" src="https://cdn.glitch.com/2087dfa6-bd02-4451-a189-36095a66f386%2Fup-arrow.png?1545397127546"/>
+      </a-assets>
+      
+      <a-entity id="spots" hotspots>
+
+
+        <a-entity id="group-point1">
+          <a-image spot="linkto:#point2;spotgroup:group-point2" position="0 0 -12" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000;"></a-image>
+        </a-entity>
+
+
+        <a-entity id="group-point2" scale="0 0 0" >
+          <a-image spot="linkto:#point3;spotgroup:group-point3" position="-10 0 -8" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000;"></a-image>
+        </a-entity>
+
+        
+        <a-entity id="group-point3" scale="0 0 0" >
+          <a-image spot="linkto:#point4;spotgroup:group-point4" position="-8 1 10" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000;"></a-image>
+        </a-entity>
+
+
+        <a-entity id="group-point4" scale="0 0 0" >
+          <a-image spot="linkto:#point5;spotgroup:group-point5" position="15 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000;"></a-image>
+        </a-entity>
+
+        <a-entity id="group-point5" scale="0 0 0" >
+          <a-image spot="linkto:#point1;spotgroup:group-point1" position="-2 0 9" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000;"></a-image>
+        </a-entity>
+
+
+
+      </a-entity>
+      
+      <a-sky id="skybox" src="#point1"></a-sky>
+      
+
+    <a-camera position="0 0 0" rotation="10 35 0" >
+        <a-sound src="url(assets/sound.mp3)" autoplay="true"
+                 position="0 0 0" loop="true" volume="0.5"></a-sound>
+    </a-camera>
+
+
+
+    </a-scene>
+  </body>
+</html>

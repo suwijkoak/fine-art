@@ -1,0 +1,283 @@
+<html>
+	<!DOCTYPE html>
+    
+	<head>
+        <meta charset="UTF-8">
+		<title>Map Main Page</title>
+	</head>
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link rel="stylesheet" href="include/css/nav.css" />
+	<link rel="stylesheet" href="include/css/style.css" />
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> -->
+	<body onload="init();">
+		<header class="nav-top">
+			<span class="hamburger material-icons" id="ham">menu</span>
+		</header>
+
+		<div class="container-fruid">
+			<div id="map"></div>
+		</div>
+		<nav class="nav-drill">
+			<ul class="nav-items nav-level-1">
+				<li class="nav-item">
+					<a class="nav-link pad" href="index.html">
+						<img src="img/logo.jpg" width="210px" height="100px"/>
+					</a>
+				</li>
+                <h5 class="head-menu">Menu</h5>
+				<li class="nav-item">
+					<a class="nav-link pad" href="index.html">
+						<img src="img/icon01.png" height="20" width="25" /> หน้าหลัก
+					</a>
+				</li>
+				<li class="nav-item nav-expand">
+					<a class="nav-link nav-expand-link" href="#"><img src="img/Temple.png" height="20" width="25" />สถานที่</a>
+					<ul class="nav-items nav-expand-content">
+						<li class="nav-item nav-expand pad02">
+							<a class="nav-link nav-expand-link" href="#"> Next </a>
+							<ul class="nav-items nav-expand-content">
+								<li class="nav-item nav-expand pad02">
+									<a class="nav-link nav-expand-link" href="#"> Next </a>
+									<ul class="nav-items nav-expand-content">
+										<li class="nav-item nav-expand pad02">
+											<a class="nav-link nav-expand-link" href="#"> Next </a>
+											<ul class="nav-items nav-expand-content">
+												<li class="nav-item nav-expand pad02">
+													<a class="nav-link nav-expand-link " href="#">
+														Next
+													</a>
+													<ul class="nav-items nav-expand-content">
+														<li class="nav-item nav-expand pad02">
+															<a class="nav-link nav-expand-link" href="#">
+																Next
+															</a>
+															<ul class="nav-items nav-expand-content">
+																<li class="nav-item nav-expand pad02">
+																	<a class="nav-link nav-expand-link" href="#">
+																		Next
+																	</a>
+																	<ul class="nav-items nav-expand-content">
+																		<li class="nav-item">
+                                                                            <a class="nav-link" href="place/Lanna_Mu.html">
+                                                                                <p><img src="img/Temple.png" class="middle" height="20" width="25" />อาคารพิพิธภัณฑ์พื้นถิ่นล้านนา</p>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="nav-item">
+                                                                            <a class="nav-link" href="place/Tin_Mat_Yang.html">
+                                                                                <p><img src="img/Temple.png" class="middle" height="20" width="25" />หออินทขิลและต้นไม้ยาง</p>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="nav-item">
+                                                                            <a class="nav-link" href="place/Sri_Poom.html">
+                                                                                <p><img src="img/Temple.png" class="middle" height="20" width="25" />แจ่งศรีภูมิและหอเทวดาอารักษ์</p>
+                                                                            </a>
+                                                                        </li>
+																	</ul>
+																</li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" href="place/Aumnuay_YRC.html">
+                                                                        <img src="img/Temple.png" height="20" width="25" />อาคารอำนวยการโรงเรียนยุพราชวิทยาลัย
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" href="place/Duriyang_YRC.html">
+                                                                        <img src="img/Temple.png" height="20" width="25" />อาคารดุริยางค์โรงเรียนยุพราชวิทยาลัย
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" href="place/Cult_Art_CM.html">
+                                                                        <img src="img/Temple.png" height="20" width="25" />อาคารหอศิลปวัฒนธรรมเมืองเชียงใหม่
+                                                                    </a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" href="place/JD_Artroom.html">
+                                                                        <img src="img/Temple.png" height="20" width="25" />เจดีย์ร้างในหอศิลป์กลางเวียง
+                                                                    </a>
+                                                                </li>
+															</ul>
+														</li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="place/3_King.html">
+                                                                <img src="img/Temple.png" height="20" width="25" />อนุสาวรีย์สามกษัตริย์
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="place/Chiang_Puek_Gate.html">
+                                                                <img src="img/Temple.png" height="20" width="25" />ประตูช้างเผือก
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="place/Chang_Puek_Monu.html">
+                                                                <img src="img/Temple.png" height="20" width="25" />อนุสาวรีย์ช้างเผือก
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="place/Kuang_Sing.html">
+                                                                <img src="img/Temple.png" height="20" width="25" />อนุสาวรีย์ข่วงสิงห์
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="place/Khum_Bureerat.html">
+                                                                <img src="img/Temple.png" height="20" width="25" />คุ้มเจ้าบุรีรัตน์
+                                                            </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" href="place/JD_Intakin.html">
+                                                                <img src="img/Temple.png" height="20" width="25" />เจดีย์วัดร้างอินทขิล
+                                                            </a>
+                                                        </li>
+
+													</ul>
+												</li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="place/JD_Luang.html">
+                                                        <img src="img/Temple.png" height="20" width="25" />วัดเจดีย์หลวง
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="place/Pun_thao.html">
+                                                        <img src="img/Temple.png" height="20" width="25" />วัดพันเตา
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="place/Sadue_Muang.html">
+                                                        <img src="img/Temple.png" height="20" width="25" />วัดสะดือเมือง
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="place/Hor_Mungrai.html">
+                                                        <img src="img/Temple.png" height="20" width="25" />หอพญามังราย
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="place/Gu_Mungrai.html">
+                                                        <img src="img/Temple.png" height="20" width="25" />กู่พญามังราย
+                                                    </a>
+                                                </li>
+											</ul>
+										</li>
+										<li class="nav-item">
+                                            <a class="nav-link" href="place/Hua_Kuang.html">
+                                                <img src="img/Temple.png" height="20" width="25" />วัดหัวข่วง
+                                            </a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a class="nav-link" href="place/7_Yod.html">
+                                                <img src="img/Temple.png" height="20" width="25" />วัดเจ็ดยอด
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">
+                                                <img src="img/Temple.png" height="20" width="25" />วัดเจดีย์แดง
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="place/Pun_saaart.html">
+                                                <img src="img/Temple.png" height="20" width="25" />วัดปันสาท
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">
+                                                <img src="img/Temple.png" height="20" width="25" />วัดพระเจ้าอมเหมี้ยง
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="place/Chetta.html">
+                                                <img src="img/Temple.png" height="20" width="25" />วัดเชษฐา
+                                            </a>
+                                        </li>
+									</ul>
+								</li>
+								<li class="nav-item">
+                                    <a class="nav-link" href="place/Chiang_Yuen.html">
+                                        <img src="img/Temple.png" height="20" width="25" />วัดเชียงยืน
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="place/Chiang_Chom.html">
+                                        <img src="img/Temple.png" height="20" width="25" />วัดเชียงโฉม
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="place/Pa_Pao.html">
+                                        <img src="img/Temple.png" height="20" width="25" />วัดป่าเป้า
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="place/Lok_Moli.html">
+                                        <img src="img/Temple.png" height="20" width="25" />วัดโลกโมฬี
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="place/Mor_Kham_Tuang.html">
+                                        <img src="img/Temple.png" height="20" width="25" />วัดหม้อคำตวง
+                                    </a>
+                                </li>
+							</ul>
+						</li>
+						<li class="nav-item">
+                            <a class="nav-link" href="place/Gu_Tao.html">
+                                <img src="img/Temple.png" height="20" width="25" />วัดกู่เต้า
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="place/Juan_Ka_Mah.html">
+                                <img src="img/Temple.png" height="20" width="25" />วัดควรค่าม้า
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="place/Chai_Pra_Kiat.html">
+                                <img src="img/Temple.png" height="20" width="25" />วัดชัยพระเกียรติ
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="place/Chiang_Man.html">
+                                <img src="img/Temple.png" height="20" width="25" />วัดเชียงมั่น
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="place/Duang_Dee.html">
+                                <p><img src="img/Temple.png" class="middle" height="20" width="25" />วัดดวงดี</p>
+                            </a>
+                        </li>
+					</ul>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link pad" href="#"> <img src="img/about_us.png" height="20" width="25" />เกี่ยวกับเรา </a>
+				</li>
+				<!-- <li class="nav-item">
+                      <a class="nav-link" href="#">
+                          Quick links
+                      </a>
+                  </li>
+              <li class="nav-item">
+                      <a class="nav-link" href="#">
+                          Launchpad
+                      </a>
+                  </li> -->
+			</ul>
+		</nav>
+		<footer></footer>
+		<script src="include/js/nav.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script
+			src="https://code.jquery.com/jquery-1.12.4.min.js"
+			integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+			crossorigin="anonymous"
+		></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+			integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+			crossorigin="anonymous"
+		></script>
+		<script
+			type="text/javascript"
+			src="https://api.longdo.com/map/?key=1c6f84d456d2f648686a1a5cc9970113"
+		></script>
+		<script src="include/js/map02.js"></script>
+	</body>
+</html>
